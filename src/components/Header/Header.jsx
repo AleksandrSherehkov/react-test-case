@@ -1,3 +1,5 @@
+import { Navigation } from '@/components/Navigation/Navigation';
+
 export const Header = () => {
-  return <div>Header</div>;
+  return <Navigation />;
 };
