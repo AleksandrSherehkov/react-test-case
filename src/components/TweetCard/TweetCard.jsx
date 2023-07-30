@@ -2,8 +2,6 @@ import { Button } from '@/components/Button/Button';
 import PropTypes from 'prop-types';
 
 export const TweetCard = ({ data: { id, user, avatar, tweets, followers } }) => {
-  console.log(id);
-
   return (
     <li>
       <img src={avatar} alt={user} />

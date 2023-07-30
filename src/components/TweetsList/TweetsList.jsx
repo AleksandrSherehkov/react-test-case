@@ -3,15 +3,10 @@ import { ErrorIndicator } from '@/components/ErrorIndicator/ErrorIndicator';
 import { useQuery } from 'react-query';
 import { NoTweetsFound } from '@/components/NoTweetsFound/NoTweetsFound';
 import { TweetCard } from '@/components/TweetCard/TweetCard';
+import { fetchTweets } from '@/services/api/tweetsApi';
 
 export const TweetsList = () => {
-  const {
-    isLoading,
-    error,
-    data: users,
-  } = useQuery('tweets', () =>
-    fetch('https://64c67e5d0a25021fde91b4af.mockapi.io/users').then(res => res.json())
-  );
+  const { isLoading, error, data: users, isSuccess } = useQuery('tweets', fetchTweets);
 
   if (isLoading) return <LoadingIndicator />;
 
@@ -21,12 +16,5 @@ export const TweetsList = () => {
     return <NoTweetsFound />;
   }
 
-  console.log(users);
-  return (
-    <ul>
-      {users.map(user => (
-        <TweetCard key={user.id} data={user} />
-      ))}
-    </ul>
-  );
+  return <ul>{isSuccess && users.map(user => <TweetCard key={user.id} data={user} />)}</ul>;
 };
