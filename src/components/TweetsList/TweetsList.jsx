@@ -13,8 +13,8 @@ export const TweetsList = () => {
     data: users,
     isSuccess,
   } = useQuery({
-    queryKey: ['tweets'],
-    queryFn: fetchTweets,
+    queryKey: ['tweets', 'all'],
+    queryFn: () => fetchTweets('all'),
   });
 
   if (isLoading) return <LoadingIndicator />;
@@ -25,5 +25,9 @@ export const TweetsList = () => {
     return <NoTweetsFound />;
   }
 
-  return <ul>{isSuccess && users.map(user => <TweetCard key={user.id} data={user} />)}</ul>;
+  return (
+    <ul className="flex flex-col justify-center items-center flex-wrap gap-10 w-full">
+      {isSuccess && users.map(user => <TweetCard key={user.id} data={user} />)}
+    </ul>
+  );
 };
