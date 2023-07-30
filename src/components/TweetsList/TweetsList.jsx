@@ -1,12 +1,21 @@
 import { LoadingIndicator } from '@/components/LaadingIndicator/LaadingIndicator';
 import { ErrorIndicator } from '@/components/ErrorIndicator/ErrorIndicator';
-import { useQuery } from 'react-query';
+
 import { NoTweetsFound } from '@/components/NoTweetsFound/NoTweetsFound';
 import { TweetCard } from '@/components/TweetCard/TweetCard';
 import { fetchTweets } from '@/services/api/tweetsApi';
+import { useQuery } from '@tanstack/react-query';
 
 export const TweetsList = () => {
-  const { isLoading, error, data: users, isSuccess } = useQuery('tweets', fetchTweets);
+  const {
+    isLoading,
+    error,
+    data: users,
+    isSuccess,
+  } = useQuery({
+    queryKey: ['tweets'],
+    queryFn: fetchTweets,
+  });
 
   if (isLoading) return <LoadingIndicator />;
 
