@@ -1,14 +1,32 @@
+import { LoadingIndicator } from '@/components/LaadingIndicator/LaadingIndicator';
+import { ErrorIndicator } from '@/components/ErrorIndicator/ErrorIndicator';
 import { useQuery } from 'react-query';
+import { NoTweetsFound } from '@/components/NoTweetsFound/NoTweetsFound';
+import { TweetCard } from '@/components/TweetCard/TweetCard';
 
 export const TweetsList = () => {
-  const { isLoading, error, data } = useQuery('tweets', () =>
+  const {
+    isLoading,
+    error,
+    data: users,
+  } = useQuery('tweets', () =>
     fetch('https://64c67e5d0a25021fde91b4af.mockapi.io/users').then(res => res.json())
   );
-  console.log(data);
 
-  if (isLoading) return 'Loading...';
+  if (isLoading) return <LoadingIndicator />;
 
-  if (error) return 'An error has occurred: ' + error.message;
+  if (error) return <ErrorIndicator error={error} />;
 
-  return <div>TweetsList</div>;
+  if (users.length === 0) {
+    return <NoTweetsFound />;
+  }
+
+  console.log(users);
+  return (
+    <ul>
+      {users.map(user => (
+        <TweetCard key={user.id} data={user} />
+      ))}
+    </ul>
+  );
 };
