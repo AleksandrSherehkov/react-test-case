@@ -1,6 +1,7 @@
 import { TweetsList } from '@/components/TweetsList/TweetsList';
 import { useState } from 'react';
 import { Dropdown } from '@/components/Dropdown/Dropdown';
+import { Link } from 'react-router-dom';
 
 export const TweetsViewer = () => {
   const options = [
@@ -13,6 +14,7 @@ export const TweetsViewer = () => {
 
   return (
     <div>
+      <Link to="/">toBack</Link>
       <div>
         <Dropdown
           options={options}
