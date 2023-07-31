@@ -1,24 +1,24 @@
 import { TweetsList } from '@/components/TweetsList/TweetsList';
 import { useState } from 'react';
+import { Dropdown } from '@/components/Dropdown/Dropdown';
 
 export const TweetsViewer = () => {
+  const options = [
+    { value: 'all', label: 'All' },
+    { value: 'follow', label: 'Follow' },
+    { value: 'isFollowed', label: 'Followings' },
+  ];
+
   const [view, setView] = useState('all');
 
   return (
     <div>
       <div>
-        <button variant={view === 'all' ? 'outline' : 'solid'} onClick={() => setView('all')}>
-          all
-        </button>
-        <button variant={view === 'follow' ? 'outline' : 'solid'} onClick={() => setView('follow')}>
-          Follow
-        </button>
-        <button
-          variant={view === 'isFollowed' ? 'outline' : 'solid'}
-          onClick={() => setView('isFollowed')}
-        >
-          followings
-        </button>
+        <Dropdown
+          options={options}
+          selectedOption={view}
+          onSelectOption={selectedOption => setView(selectedOption)}
+        />
       </div>
 
       <TweetsList state={view} />
