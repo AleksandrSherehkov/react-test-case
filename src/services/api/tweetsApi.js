@@ -14,10 +14,11 @@ export const fetchTweets = async (state = 'all') => {
   // }
 };
 
-export const toggleFollowersStatus = async (id, isFollowed) => {
+export const toggleFollowersStatus = async (id, isFollowed, calcFollowers) => {
   const response = await instance.put(`${API_ENDPOINT}/${id}`, {
     //followers: updatedFollowers,
     isFollowed,
+    followers: calcFollowers,
   });
   return response;
 };
