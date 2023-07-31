@@ -1,21 +1,14 @@
+import PropTypes from 'prop-types';
 import { LoadingIndicator } from '@/components/LaadingIndicator/LaadingIndicator';
 import { ErrorIndicator } from '@/components/ErrorIndicator/ErrorIndicator';
 
 import { NoTweetsFound } from '@/components/NoTweetsFound/NoTweetsFound';
 import { TweetCard } from '@/components/TweetCard/TweetCard';
-import { fetchTweets } from '@/services/api/tweetsApi';
-import { useQuery } from '@tanstack/react-query';
 
-export const TweetsList = () => {
-  const {
-    isLoading,
-    error,
-    data: users,
-    isSuccess,
-  } = useQuery({
-    queryKey: ['tweets', 'all'],
-    queryFn: () => fetchTweets('all'),
-  });
+import { useTweetsQuery } from '@/hooks/useTweetsQuery';
+
+export const TweetsList = ({ state }) => {
+  const { isLoading, error, data: users, isSuccess } = useTweetsQuery(state);
 
   if (isLoading) return <LoadingIndicator />;
 
@@ -30,4 +23,8 @@ export const TweetsList = () => {
       {isSuccess && users.map(user => <TweetCard key={user.id} data={user} />)}
     </ul>
   );
+};
+
+TweetsList.propTypes = {
+  state: PropTypes.any.isRequired,
 };
