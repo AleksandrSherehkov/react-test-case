@@ -1,7 +1,9 @@
-import { Button } from '@/components/Button/Button';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import PropTypes from 'prop-types';
+
 import { toggleFollowersStatus } from '@/services/api/tweetsApi';
+
+import { Button } from '@/components/Button/Button';
 
 export const TweetCard = ({ data: { id, user, avatar, tweets, followers, isFollowed } }) => {
   const queryClient = useQueryClient();

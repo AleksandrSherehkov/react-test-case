@@ -1,15 +1,13 @@
-import { TweetsList } from '@/components/TweetsList/TweetsList';
 import { useState } from 'react';
-import { Dropdown } from '@/components/Dropdown/Dropdown';
 import { Link } from 'react-router-dom';
 
-export const TweetsViewer = () => {
-  const options = [
-    { value: 'all', label: 'All' },
-    { value: 'follow', label: 'Follow' },
-    { value: 'isFollowed', label: 'Followings' },
-  ];
+import { dropdownOptions } from '@/services/dropdownOptions';
 
+import { TweetsList } from '@/components/TweetsList/TweetsList';
+import { Dropdown } from '@/components/Dropdown/Dropdown';
+
+export const TweetsViewer = () => {
+  // Стан для вибраного значення фільтру
   const [view, setView] = useState('all');
 
   return (
@@ -17,7 +15,7 @@ export const TweetsViewer = () => {
       <Link to="/">toBack</Link>
       <div>
         <Dropdown
-          options={options}
+          options={dropdownOptions}
           selectedOption={view}
           onSelectOption={selectedOption => setView(selectedOption)}
         />
