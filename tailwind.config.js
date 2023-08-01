@@ -2,11 +2,17 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    container: {
-      center: true,
-      padding: '2rem',
-    },
     extend: {
+      container: {
+        center: true,
+        padding: '2rem',
+      },
+      fontFamily: {
+        sans: ['Montserrat', 'Arial', 'sans-serif'],
+      },
+      boxShadow: {
+        '3xl': '0px 3.4369285106658936px 3.4369285106658936px 0px rgba(0, 0, 0, 0.25)',
+      },
       width: {
         380: '380px',
         196: '196px',

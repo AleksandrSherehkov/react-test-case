@@ -36,14 +36,18 @@ export const TweetsList = ({ state }) => {
 
   return (
     <>
-      <ul className="flex flex-col justify-center items-center flex-wrap gap-10 w-full">
+      <ul className="flex  justify-center items-center flex-wrap gap-[48px] w-full mt-20">
         {showUsers.map(user => (
           <TweetCard key={user.id} data={user} />
         ))}
       </ul>
 
       {isShowBtn && (
-        <button type="button" onClick={loadMore}>
+        <button
+          type="button"
+          onClick={loadMore}
+          className="flex justify-center items-centertext-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 transition-all duration-1000 ease-in-out hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 m-auto mt-10 "
+        >
           Load More
         </button>
       )}

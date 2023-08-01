@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { dropdownOptions } from '@/services/dropdownOptions';
 
@@ -11,17 +10,14 @@ export const TweetsViewer = () => {
   const [view, setView] = useState('all');
 
   return (
-    <div>
-      <Link to="/">toBack</Link>
-      <div>
-        <Dropdown
-          options={dropdownOptions}
-          selectedOption={view}
-          onSelectOption={selectedOption => setView(selectedOption)}
-        />
-      </div>
+    <>
+      <Dropdown
+        options={dropdownOptions}
+        selectedOption={view}
+        onSelectOption={selectedOption => setView(selectedOption)}
+      />
 
       <TweetsList state={view} />
-    </div>
+    </>
   );
 };

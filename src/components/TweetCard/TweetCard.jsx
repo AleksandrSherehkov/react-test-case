@@ -4,6 +4,11 @@ import { useToggleFollowersStatus } from '@/hooks/useToggleFollowersStatus';
 
 import { Button } from '@/components/Button/Button';
 
+import bgImageCard from '../../assets/bgCard.webp';
+import logoCard from '../../assets/LogoCard.webp';
+import strokeAvatar from '../../assets/strokeAvatar.webp';
+import gorizontStroke from '../../assets/gorizontStroke.webp';
+
 export const TweetCard = ({ data: { id, user, avatar, tweets, followers, isFollowed } }) => {
   // Використовуємо хук useToggleFollowersStatus для отримання мутації toggle та стану завантаження isLoading
   const {
@@ -12,10 +17,40 @@ export const TweetCard = ({ data: { id, user, avatar, tweets, followers, isFollo
   } = useToggleFollowersStatus(id, isFollowed, followers);
 
   return (
-    <li className="flex flex-col justify-center  items-center w-380  h-460 rounded-3xl bg-gradient-to-br from-custom-blue1 via-custom-blue2 to-custom-blue3 shadow-[-2.5776965618133545px 6.873857021331787px 20.621572494506836px 0px rgba(0, 0, 0, 0.23)]">
-      <img src={avatar} alt={user} />
-      <p>{tweets} TWEETS</p>
-      <p>{followers.toLocaleString('en-US')} FOLLOWERS</p>
+    <li className="relative flex flex-col   items-center w-380  h-460 rounded-[20px] bg-gradient-to-br from-custom-blue1 via-custom-blue2 to-custom-blue3 shadow-[-2.5776965618133545px 6.873857021331787px 20.621572494506836px 0px rgba(0, 0, 0, 0.23)]">
+      <img
+        src={logoCard}
+        alt="GoIt"
+        className="w-[76px] h-[22px] absolute top-[20px] left-[20px]"
+      />
+      <img
+        src={bgImageCard}
+        alt="GoIt"
+        className="absolute top-[28px] left-[36px] w-[308px] h-[168px]"
+      />
+      <div className="relative  h-[80px] flex justify-center items-center mt-[178px] w-full">
+        <img
+          src={gorizontStroke}
+          alt="GoIt"
+          className="w-full h-[8px] object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        />
+        <img
+          src={strokeAvatar}
+          alt="GoIt"
+          className=" w-[80px] h-[80px] object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        />
+
+        <img
+          src={avatar}
+          alt={user}
+          className="inline object-cover w-[62px] h-[62px] z-10 rounded-full "
+        />
+      </div>
+
+      <p className="mt-[26px] text-[#EBD8FF] text-xl font-medium uppercase">{tweets} TWEETS</p>
+      <p className="mt-[16px]  text-[#EBD8FF] text-xl font-medium uppercase">
+        {followers.toLocaleString('en-US')} followers
+      </p>
       <Button toggle={toggle} text={isFollowed ? 'Following' : 'Follow'} disabled={isLoading} />
     </li>
   );
