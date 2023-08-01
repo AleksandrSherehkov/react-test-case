@@ -2,3 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 100s linear infinite; /* Здесь значение 2s устанавливает стандартную продолжительность анимации вращения в 2 секунды */
+}
+
+.animate-spin-slow {
+  animation-timing-function: steps(
+    5000
+  ); /* Увеличьте значение, чтобы замедлить анимацию, или уменьшите, чтобы ускорить */
+}

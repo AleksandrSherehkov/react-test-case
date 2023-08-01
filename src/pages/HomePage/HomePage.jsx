@@ -4,7 +4,7 @@ const HomePage = () => {
   return (
     <div className=" text-gray-600 flex  items-center justify-center flex-col">
       <img
-        className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 h-96 object-cover object-center rounded transform "
+        className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 h-96 object-cover object-center rounded   animate-spin animate-spin-slow"
         alt="hero"
         src={heroBg}
       />

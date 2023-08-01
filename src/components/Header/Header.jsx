@@ -1,23 +1,23 @@
 import { Navigation } from '@/components/Navigation/Navigation';
 
+import { Link } from 'react-router-dom';
+
 export const Header = () => {
   return (
     <header className=" py-4 w-full flex flex-wrap   gap-10 md:flex-row items-center">
-      <a className="flex title-font font-medium items-center text-gray-900  md:mb-0">
+      <Link
+        to="/"
+        className="cursor-pointer flex title-font   title-font font-medium items-center text-gray-900 mb-4 md:mb-0 transform transition-transform hover:scale-105"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          className="w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
+          className="stroke-amber-400 fill-fuchsia-600 w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
           viewBox="0 0 24 24"
         >
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
         </svg>
-        <span className="ml-3 text-xl">TWEETS</span>
-      </a>
+        <span className="ml-3 text-xl text-sky-950">TWEETS</span>
+      </Link>
 
       <Navigation />
     </header>

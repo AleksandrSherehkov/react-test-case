@@ -12,7 +12,6 @@ export const Navigation = () => {
     <nav className=" flex flex-wrap gap-8  items-center text-base justify-center">
       {links.map(({ path, title }) => (
         <NavLink
-          active
           to={path}
           key={title}
           className={({ isActive }) =>
