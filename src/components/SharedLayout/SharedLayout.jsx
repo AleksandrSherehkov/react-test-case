@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 export const SharedLayout = () => {
   return (
-    <div className="container">
+    <div className="container bg-cyan-600 ">
       <Header />
       <main>
         <Suspense fallback={<h1>Loading...</h1>}>

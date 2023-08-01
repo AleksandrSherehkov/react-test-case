@@ -20,6 +20,7 @@ export default {
         'custom-blue2': '#5736A3 69.10%',
         'custom-blue3': '#4B2A99 100%',
       },
+      animation: ['hover'],
     },
   },
   plugins: [],

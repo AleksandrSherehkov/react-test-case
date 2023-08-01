@@ -6,18 +6,19 @@ const links = [
 ];
 
 export const Navigation = () => {
+  const activeLink = 'bg-blue-500 text-white hover:text-white font-bold py-2 px-4 rounded';
   return (
-    <nav>
-      <ul className="flex justify-start gap-5">
-        {links.map(({ path, title }) => (
-          <li
-            key={title}
-            className="text-2xl font-semibold text-indigo-500 inline-blockbg-violet-500 hover:bg-violet-600 visited:text-purple-600 focus:outline-none focus:ring focus:ring-violet-300"
-          >
-            <NavLink to={path}>{title}</NavLink>
-          </li>
-        ))}
-      </ul>
+    <nav className=" flex flex-wrap gap-8 items-center text-base justify-center">
+      {links.map(({ path, title }) => (
+        <NavLink
+          active
+          to={path}
+          key={title}
+          className={({ isActive }) => (isActive ? activeLink : 'hover:text-white')}
+        >
+          {title}
+        </NavLink>
+      ))}
     </nav>
   );
 };
