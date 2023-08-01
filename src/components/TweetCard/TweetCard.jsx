@@ -31,12 +31,12 @@ export const TweetCard = ({ data: { id, user, avatar, tweets, followers, isFollo
       <div className="relative  h-[80px] flex justify-center items-center mt-[178px] w-full">
         <img
           src={gorizontStroke}
-          alt="GoIt"
+          alt="Stroke"
           className="w-full h-[8px] object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         />
         <img
           src={strokeAvatar}
-          alt="GoIt"
+          alt="Frame"
           className=" w-[80px] h-[80px] object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         />
 
