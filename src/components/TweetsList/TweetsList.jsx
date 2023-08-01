@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import { useTweetsQuery } from '@/hooks/useTweetsQuery';
 
-import { LoadingIndicator } from '@/components/LaadingIndicator/LaadingIndicator';
+import { useLoadMore } from '@/hooks/useLoadMore';
+
+import { LoadingIndicator } from '@/components/LoadingIndicator/LoadingIndicator';
 import { ErrorIndicator } from '@/components/ErrorIndicator/ErrorIndicator';
 import { NoTweetsFound } from '@/components/NoTweetsFound/NoTweetsFound';
 import { TweetCard } from '@/components/TweetCard/TweetCard';
-import { useLoadMore } from '@/hooks/useLoadMore';
 
 export const TweetsList = ({ state }) => {
   // Кількість твітів на одній сторінці пагінації
