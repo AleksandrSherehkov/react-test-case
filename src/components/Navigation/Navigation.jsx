@@ -7,15 +7,15 @@ const links = [
 
 export const Navigation = () => {
   const activeLink =
-    'bg-blue-500 text-white transition-all duration-500 ease-in-out hover:text-white font-bold  rounded';
+    ' text-white  shadow-link px-2 transition-all duration-500 ease-in-out hover:text-white font-bold  rounded';
   return (
-    <nav className=" flex flex-wrap gap-8  items-center text-base justify-center">
+    <nav className=" flex flex-wrap gap-8  items-center text-yellow-300 font-semibold justify-center ">
       {links.map(({ path, title }) => (
         <NavLink
           to={path}
           key={title}
           className={({ isActive }) =>
-            isActive ? activeLink : 'hover:text-white transition-all duration-300 ease-in-out'
+            isActive ? activeLink : 'hover:text-white  transition-all  duration-300 ease-in-out'
           }
         >
           {title}
