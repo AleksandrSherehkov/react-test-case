@@ -17,7 +17,7 @@ export const TweetCard = ({ data: { id, user, avatar, tweets, followers, isFollo
   } = useToggleFollowersStatus(id, isFollowed, followers);
 
   return (
-    <li className="relative flex flex-col   items-center w-380  h-460 rounded-[20px] bg-gradient-to-br from-custom-blue1 via-custom-blue2 to-custom-blue3 shadow-[-2.5776965618133545px 6.873857021331787px 20.621572494506836px 0px rgba(0, 0, 0, 0.23)]">
+    <li className="relative flex flex-col   items-center w-380  h-460 rounded-[20px] bg-gradient-to-br from-custom-blue1 via-custom-blue2 to-custom-blue3 shadow-card">
       <img
         src={logoCard}
         alt="GoIt"

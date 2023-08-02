@@ -11,7 +11,8 @@ export default {
         sans: ['Montserrat', 'Arial', 'sans-serif'],
       },
       boxShadow: {
-        '3xl': '0px 3.4369285106658936px 3.4369285106658936px 0px rgba(0, 0, 0, 0.25)',
+        but: '0px 3.4369285106658936px 3.4369285106658936px 0px rgba(0, 0, 0, 0.25)',
+        card: '-2.5776965618133545px 6.873857021331787px 20.621572494506836px 0px rgba(0, 0, 0, 0.23)',
       },
       width: {
         380: '380px',
