@@ -12,11 +12,9 @@
 }
 
 .animate-spin {
-  animation: spin 100s linear infinite; /* Здесь значение 2s устанавливает стандартную продолжительность анимации вращения в 2 секунды */
+  animation: spin 100s linear infinite;
 }
 
 .animate-spin-slow {
-  animation-timing-function: steps(
-    5000
-  ); /* Увеличьте значение, чтобы замедлить анимацию, или уменьшите, чтобы ускорить */
+  animation-timing-function: steps(5000);
 }

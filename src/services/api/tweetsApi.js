@@ -2,7 +2,7 @@ import { instance } from './axiosInstance';
 
 const API_ENDPOINT = '/users';
 
-// Функція для отримання твітів з сервера
+
 export const fetchTweets = async (state = 'all') => {
   const queries = state === 'all' ? '' : `?isFollowed=${state === 'isFollowed'}`;
 
@@ -14,7 +14,7 @@ export const fetchTweets = async (state = 'all') => {
   }
 };
 
-// Функція для зміни статусу фолловерів
+
 export const toggleFollowersStatus = async (id, isFollowed, calcFollowers) => {
   try {
     const response = await instance.put(`${API_ENDPOINT}/${id}`, {

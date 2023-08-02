@@ -6,11 +6,8 @@ import { Button } from '@/components/Button/Button';
 
 import bgImageCard from '../../assets/bgCard.webp';
 import logoCard from '../../assets/LogoCard.webp';
-import strokeAvatar from '../../assets/strokeAvatar.webp';
-import gorizontStroke from '../../assets/gorizontStroke.webp';
 
 export const TweetCard = ({ data: { id, user, avatar, tweets, followers, isFollowed } }) => {
-  // Використовуємо хук useToggleFollowersStatus для отримання мутації toggle та стану завантаження isLoading
   const {
     toggle: { mutate: toggle },
     isLoading,
@@ -29,21 +26,11 @@ export const TweetCard = ({ data: { id, user, avatar, tweets, followers, isFollo
         className="absolute top-[28px] left-[36px] w-[308px] h-[168px]"
       />
       <div className="relative  h-[80px] flex justify-center items-center mt-[178px] w-full">
-        <img
-          src={gorizontStroke}
-          alt="Stroke"
-          className="w-full h-[8px] object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-        />
-        <img
-          src={strokeAvatar}
-          alt="Frame"
-          className=" w-[80px] h-[80px] object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-        />
-
+        <div className="before:absolute before:top-1/2 before:inset-0 before:w-full before:h-2 before:bg-[#EBD8FF]  "></div>
         <img
           src={avatar}
           alt={user}
-          className="inline object-cover w-[62px] h-[62px] z-10 rounded-full "
+          className="inline object-cover w-[62px] h-[62px]  rounded-full box-content   border-[#EBD8FF] border-8 shadow-avatar drop-shadow-avatar"
         />
       </div>
 
