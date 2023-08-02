@@ -30,7 +30,7 @@ export const TweetsList = ({ state }) => {
   return (
     <>
       <FilterResult users={filteredTweets} />
-      <ul className="flex  justify-center items-center flex-wrap gap-[48px] max-w-[1240px] mt-20">
+      <ul className="flex  justify-center items-center flex-wrap gap-[48px]  mt-20">
         {showUsers.map(user => (
           <TweetCard key={user.id} data={user} />
         ))}
