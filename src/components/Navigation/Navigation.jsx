@@ -1,9 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-const links = [
-  { path: '/', title: 'Home' },
-  { path: '/tweets', title: 'Tweets' },
-];
+import { links } from '@/services/navLinks';
 
 export const Navigation = () => {
   const activeLink =

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { useTweetsQuery } from '@/hooks/useTweetsQuery';
 
+import { useTweetsQuery } from '@/hooks/useTweetsQuery';
 import { useLoadMore } from '@/hooks/useLoadMore';
 
 import { LoadingIndicator } from '@/components/LoadingIndicator/LoadingIndicator';
@@ -9,12 +9,14 @@ import { NoTweetsFound } from '@/components/NoTweetsFound/NoTweetsFound';
 import { TweetCard } from '@/components/TweetCard/TweetCard';
 import { FilterResult } from '@/components/FilterResult/FilterResult';
 
+const TWEETS_PER_PAGE = 3;
+
 export const TweetsList = ({ state }) => {
-  const TWEETS_PER_PAGE = 3;
-
   const { isLoading, error, data: users } = useTweetsQuery(state);
-
   const { perPage, loadMore } = useLoadMore(TWEETS_PER_PAGE);
+
+  const showUsers = users.slice(0, perPage);
+  const isShowBtn = users.length > showUsers.length;
 
   if (isLoading) return <LoadingIndicator />;
 
@@ -23,10 +25,6 @@ export const TweetsList = ({ state }) => {
   if (users.length === 0) {
     return <NoTweetsFound />;
   }
-
-  const showUsers = users.slice(0, perPage);
-
-  const isShowBtn = users.length > showUsers.length;
 
   return (
     <>

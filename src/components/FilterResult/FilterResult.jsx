@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 export const FilterResult = ({ users: { length } }) => {
   return (
     <div className="flex items-center justify-center">

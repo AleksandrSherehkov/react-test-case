@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
+
 import { Navigation } from '@/components/Navigation/Navigation';
 
-import { Link } from 'react-router-dom';
 
 export const Header = () => {
   return (
