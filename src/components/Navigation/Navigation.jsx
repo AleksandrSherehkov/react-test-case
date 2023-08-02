@@ -9,7 +9,7 @@ export const Navigation = () => {
   const activeLink =
     ' text-white  shadow-link px-2 transition-all duration-500 ease-in-out hover:text-white font-bold  rounded';
   return (
-    <nav className=" flex flex-wrap gap-8  items-center text-yellow-300 font-semibold justify-center ">
+    <nav className=" flex flex-wrap gap-8  items-center text-yellow-500 font-semibold justify-center ">
       {links.map(({ path, title }) => (
         <NavLink
           to={path}

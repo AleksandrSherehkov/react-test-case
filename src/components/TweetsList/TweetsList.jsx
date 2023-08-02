@@ -7,6 +7,7 @@ import { LoadingIndicator } from '@/components/LoadingIndicator/LoadingIndicator
 import { ErrorIndicator } from '@/components/ErrorIndicator/ErrorIndicator';
 import { NoTweetsFound } from '@/components/NoTweetsFound/NoTweetsFound';
 import { TweetCard } from '@/components/TweetCard/TweetCard';
+import { FilterResult } from '@/components/FilterResult/FilterResult';
 
 export const TweetsList = ({ state }) => {
   const TWEETS_PER_PAGE = 3;
@@ -29,6 +30,7 @@ export const TweetsList = ({ state }) => {
 
   return (
     <>
+      <FilterResult users={users} />
       <ul className="flex  justify-center items-center flex-wrap gap-[48px] w-full mt-20">
         {showUsers.map(user => (
           <TweetCard key={user.id} data={user} />
