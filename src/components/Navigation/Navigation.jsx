@@ -15,7 +15,7 @@ export const Navigation = () => {
           to={path}
           key={title}
           className={({ isActive }) =>
-            isActive ? activeLink : 'hover:text-white transition-all duration-1000 ease-in-out'
+            isActive ? activeLink : 'hover:text-white transition-all duration-300 ease-in-out'
           }
         >
           {title}
