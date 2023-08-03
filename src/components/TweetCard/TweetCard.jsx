@@ -19,11 +19,15 @@ export const TweetCard = ({ data: { id, user, avatar, tweets, followers, isFollo
         src={logoCard}
         alt="GoIt"
         className="w-[76px] h-[22px] absolute top-[20px] left-[20px]"
+        width="76px"
+        height="22px"
       />
       <img
         src={bgImageCard}
         alt="GoIt"
         className="absolute top-[28px] left-[36px] w-[308px] h-[168px]"
+        width="308px"
+        height="168px"
       />
       <div className="relative  h-[80px] flex justify-center items-center mt-[178px] w-full">
         <div className="before:absolute before:top-1/2 before:inset-0 before:w-full before:h-2 before:bg-[#EBD8FF]  "></div>
@@ -31,6 +35,8 @@ export const TweetCard = ({ data: { id, user, avatar, tweets, followers, isFollo
           src={avatar}
           alt={user}
           className="inline object-cover w-[62px] h-[62px]  rounded-full box-content   border-[#EBD8FF] border-8 shadow-avatar drop-shadow-avatar"
+          width="62px"
+          height="62px"
         />
       </div>
 

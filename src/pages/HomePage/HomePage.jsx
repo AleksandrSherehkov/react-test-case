@@ -7,6 +7,8 @@ const HomePage = () => {
         className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 h-96 object-cover object-center rounded   animate-spin animate-spin-slow"
         alt="hero"
         src={heroBg}
+        width="600px"
+        height="600px"
       />
       <div className="text-center lg:w-2/3 w-full">
         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
