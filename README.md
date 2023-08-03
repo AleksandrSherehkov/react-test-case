@@ -19,7 +19,7 @@ conversations.
 
 ## Technologies
 
-- Front-end: React.js, RTK Query, Tailwind CSS.
+- Front-end: React.js, TanStack Query(React Query), Tailwind CSS.
 - Back-end: mockapi.io.
 
 ## Запуск проекта
@@ -31,7 +31,8 @@ npm install
 ```
 
 ## Contributing
- If you wish to contribute to the development of this project, please refer to
-CONTRIBUTING.md for more information on how to join the development.
+
+If you wish to contribute to the development of this project, please refer to CONTRIBUTING.md for
+more information on how to join the development.
 
 Автор Alexander Shereshkov - https://t.me/Alexander_Shereshkov
