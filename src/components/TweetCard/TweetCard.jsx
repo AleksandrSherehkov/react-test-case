@@ -14,21 +14,7 @@ export const TweetCard = ({ data: { id, user, avatar, tweets, followers, isFollo
   } = useToggleFollowersStatus(id, isFollowed, followers);
 
   return (
-    <li className="relative flex flex-col   items-center w-380  h-460 rounded-[20px] bg-gradient-to-br from-custom-blue1 via-custom-blue2 to-custom-blue3 shadow-card transition-all duration-300 ease-in-out hover:shadow-hover">
-      <img
-        src={logoCard}
-        alt="GoIt"
-        className="w-[76px] h-[22px] absolute top-[20px] left-[20px]"
-        width="76px"
-        height="22px"
-      />
-      <img
-        src={bgImageCard}
-        alt="GoIt"
-        className="absolute top-[28px] left-[36px] w-[308px] h-[168px]"
-        width="308px"
-        height="168px"
-      />
+    <li className=" bg-tweenCard bg-w-[308px] bg-tweenCardPosition bg-content bg-no-repeat relative flex flex-col   items-center w-380  h-460 rounded-[20px] bg-gradient-to-br from-custom-blue1 via-custom-blue2 to-custom-blue3 shadow-card transition-all duration-300 ease-in-out hover:shadow-hover">
       <div className="relative  h-[80px] flex justify-center items-center mt-[178px] w-full">
         <div className="before:absolute before:top-1/2 before:inset-0 before:w-full before:h-2 before:bg-[#EBD8FF]  "></div>
         <img

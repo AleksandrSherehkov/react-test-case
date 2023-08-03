@@ -7,6 +7,12 @@ export default {
         center: true,
         padding: '2rem',
       },
+      backgroundImage: {
+        tweenCard: "url('/src/assets/bgCard.webp'), url('/src/assets/LogoCard.webp') ",
+      },
+      backgroundPosition: {
+        tweenCardPosition: '38px 28px, 20px 20px',
+      },
       fontFamily: {
         sans: ['Montserrat', 'Arial', 'sans-serif'],
       },
